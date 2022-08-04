@@ -58,3 +58,34 @@ morningRoutines.forEach((routine) => console.log(routine('Harry')));
 // Harry, workout!
 // Harry, shut up!
 
+//We can store functions in arrays and as you guessed we can also store them in objects and loop through them as often.
+
+// Closures
+// ********************
+
+const add = (x) => (y) => x + y;
+
+const add5 = add(5); // add5 = (y) => 5 + y;
+
+const add10 = add(10); // add10 = (y)=> 10 + y;
+
+console.log(add5(1)); //6
+console.log(add10(1)); //11;
+
+// add is a higher order function since it returns a function.
+// But add5 and add10 are closures. Because they have values 5 and 10 respectively enclosed(bound) in their parent's lexical scope and still accessible by them.
+
+// Note 1: The relationship between a closure and a higher-order function, is like parent and child, we will not be able to have a closure without a higher-order function
+
+// Definition 1:
+// A closure is a function that's returned by another function and has access to its lexical scope bindings
+
+// Explanation:
+// `counter` (or the lambda function) is the closure in this example and has access to `count` variable that is inside `makeCounter` function
+
+// Definition 2:
+// A closure is what a function has in "conclusion" up till the point of execution
+
+// (Degrading) Explanation:
+// `count` variable is the closure for `makeCounter`
+// And `counter` is just a function :D
